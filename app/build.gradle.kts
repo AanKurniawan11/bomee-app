@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id ("dagger.hilt.android.plugin")
+    id ("kotlin-kapt")
 }
 
 android {
@@ -33,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -45,4 +50,25 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation (libs.hilt.android)
+    kapt (libs.hilt.android.compiler)
+
+    //Retrofit + GSON
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.converter.scalars)
+    implementation(libs.logging.interceptor)
+
+    //chucker(
+    debugImplementation (libs.library)
+    releaseImplementation (libs.library.no.op)
+
+    //Coroutine
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.kotlinx.coroutines.android)
+
+    //Datastore
+    implementation (libs.androidx.datastore.preferences)
+
 }
