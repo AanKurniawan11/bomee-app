@@ -45,7 +45,6 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 is Resource.Failure -> {
-                    // Hide the loading spinner and show error message
                     binding.loadingProgressBar.visibility = View.GONE
                     handleApiError(binding.root, response)
                 }
