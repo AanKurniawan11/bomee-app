@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary">#2A67C4</color>
+    <color name="secondary">#F2F2F7</color>
+    <color name="dark_grey">#8B8B8B</color>
+    <color name="light_grey">#E7E7E7</color>
+    <color name="danger">#FF0000</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="bg_grey">#F4F4F4</color>
+    <color name="bg_blue">#DEE4F2</color>
+    <color name="bg_red">#FFE6E6</color>
 </resources>

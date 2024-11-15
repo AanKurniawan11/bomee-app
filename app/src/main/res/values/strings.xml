@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">BomeeApp</string>
+    <string name="masuk">Masuk</string>
+    <string name="username">Username</string>
+    <string name="kata_sandi">Kata sandi</string>
+    <string name="password">Password</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="room_name">Ruang Meeting 1</string>
+    <string name="meeting_day">Meeting Hari ini</string>
+    <string name="divisi_name">Divisi IT</string>
+    <string name="time">10.00 - 12.00</string>
+    <string name="desc_meet">Meeting Internal Tim</string>
+    <string name="month">October Meet</string>
+    <string name="News">Informasi dan Berita</string>
+    <string name="booking">Booking</string>
+    <string name="desc_book">Masukkan Informasi yang Sesuai</string>
+    <string name="room_select">Pilih Ruangan</string>
+    <string name="pilih_divisi">Pilih Divisi</string>
+    <string name="pilih_tanggal">Pilih Tanggal</string>
+    <string name="waktu_mulai">Waktu Mulai</string>
+    <string name="mulai">Mulai</string>
+    <string name="waktu_selesai">Waktu Selesai</string>
+    <string name="selesai">Selesai</string>
+    <string name="keterangan">Keterangan</string>
+
+    <item name="snackbar_text" type="id" />
+
 </resources>
