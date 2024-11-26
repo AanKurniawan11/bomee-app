@@ -15,7 +15,7 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor(@ApplicationContext context: Context) {
 
     companion object {
-        const val BASE_URL = "https://b9fc-36-73-144-128.ngrok-free.app/api/"
+        const val BASE_URL = "https://e51b-36-73-159-168.ngrok-free.app/api/"
     }
 
     val ctx = context

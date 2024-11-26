@@ -60,8 +60,8 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginTop="130dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="140dp"
                         app:cardElevation="8dp"
                         app:cardBackgroundColor="@android:color/transparent"
                         app:cardCornerRadius="8dp">

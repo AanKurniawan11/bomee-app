@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "bomee_app_data_store")
 
-class UserPreferences @Inject constructor(@ApplicationContext context: Context){
+class UserPreferences @Inject constructor(@ApplicationContext context: Context) {
 
     private val appContext = context.applicationContext
 
@@ -25,7 +25,6 @@ class UserPreferences @Inject constructor(@ApplicationContext context: Context){
         get() = appContext.dataStore.data.map { preferences ->
             preferences[TOKEN] ?: ""
         }
-
     suspend fun saveAccessToken(accessToken: String) {
         appContext.dataStore.edit { preferences ->
             preferences[TOKEN] = accessToken
@@ -36,41 +35,31 @@ class UserPreferences @Inject constructor(@ApplicationContext context: Context){
         accessToken.first()
     }
 
-    val username: Flow<String>
+    fun getRefreshToken() = runBlocking(Dispatchers.IO) {
+        refreshToken.first()
+    }
+
+    val refreshToken: Flow<String>
         get() = appContext.dataStore.data.map { preferences ->
-            preferences[USERNAME] ?: ""
+            preferences[REFRESH_TOKEN] ?: ""
         }
 
-    suspend fun saveUsername(username: String) {
+    suspend fun saveRefreshToken(refreshToken: String) {
         appContext.dataStore.edit { preferences ->
-            preferences[USERNAME] = username
+            preferences[REFRESH_TOKEN] = refreshToken
         }
     }
 
-
-    fun getUsername() = runBlocking(Dispatchers.IO) {
-        username.first()
-    }
-
-    val password: Flow<String>
-        get() = appContext.dataStore.data.map { preferences ->
-            preferences[PASSWORD] ?: ""
-        }
-
-    suspend fun savePassword(password: String) {
+    suspend fun clearAccessToken() {
         appContext.dataStore.edit { preferences ->
-            preferences[PASSWORD] = password
+            preferences.remove(TOKEN)
         }
     }
-
-    fun getPassword() = runBlocking(Dispatchers.IO) {
-        password.first()
-    }
-
 
 
     companion object {
         private val TOKEN = stringPreferencesKey("token")
+        private val REFRESH_TOKEN = stringPreferencesKey("refresh_token")
         private val USERNAME = stringPreferencesKey("username")
         private val PASSWORD = stringPreferencesKey("password")
     }

@@ -17,8 +17,7 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val authRepository: AuthRepository,
     private val userPreferences: UserPreferences
-) : ViewModel(){
-
+) : ViewModel() {
 
 
     private var _loginResponse: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
@@ -29,21 +28,29 @@ class LoginViewModel @Inject constructor(
         _loginResponse.value = authRepository.login(username, password)
     }
 
-    fun getUsername() = userPreferences.getUsername()
-    fun saveUsername(username: String) = viewModelScope.launch {
-        userPreferences.saveUsername(username)
-    }
-    fun getPassword() = userPreferences.getPassword()
-    fun savePassword(password: String) = viewModelScope.launch {
-        userPreferences.savePassword(password)
-    }
-
-    fun getToken() : String {
+    fun getToken(): String {
         return userPreferences.getAccessToken()
     }
+
     fun saveAccessToken(token: String) {
         viewModelScope.launch {
             userPreferences.saveAccessToken(token)
         }
+
+
     }
+
+    fun saveRefreshToken(refreshToken: String) {
+        viewModelScope.launch {
+            userPreferences.saveRefreshToken(refreshToken)
+        }
+    }
+
+    fun clearAccessToken() {
+        viewModelScope.launch {
+            userPreferences.clearAccessToken()
+        }
+    }
+
+
 }
