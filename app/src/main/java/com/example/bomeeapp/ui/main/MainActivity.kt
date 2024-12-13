@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.bomeeapp.R
 import com.example.bomeeapp.databinding.ActivityMainBinding
+import com.example.bomeeapp.ui.HomeActivity
 import com.example.bomeeapp.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 

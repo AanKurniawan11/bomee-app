@@ -1,9 +1,9 @@
 package com.example.bomeeapp.data.network.auth
 
 import com.example.bomeeapp.data.network.model.LoginModel
-import com.example.bomeeapp.data.network.responses.LoginResponse
+import com.example.bomeeapp.data.network.responses.auth.LoginResponse
 import com.example.bomeeapp.data.network.responses.LogoutResponse
-import com.example.bomeeapp.data.network.responses.UserDataResponse
+import com.example.bomeeapp.data.network.responses.profile.UserDataResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE

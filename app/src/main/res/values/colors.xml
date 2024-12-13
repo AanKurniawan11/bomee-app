@@ -11,4 +11,5 @@
     <color name="bg_grey">#F4F4F4</color>
     <color name="bg_blue">#DEE4F2</color>
     <color name="bg_red">#FFE6E6</color>
+    <color name="bg">#F2F2F7</color>
 </resources>

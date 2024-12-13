@@ -1,6 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Warna border saat tidak fokus (idle) -->
-    <item android:color="@color/light_grey" android:state_focused="false"/>
-    <!-- Warna border saat fokus -->
-    <item android:color="@color/primary" android:state_focused="true"/>
+    <item android:color="@color/primary" android:state_focused="true" />
+    <item android:color="@color/light_grey" android:state_focused="false" />
 </selector>

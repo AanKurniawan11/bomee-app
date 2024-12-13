@@ -12,6 +12,8 @@ import androidx.fragment.app.viewModels
 import com.example.bomeeapp.databinding.FragmentProfileBinding
 import com.example.bomeeapp.data.network.Resource
 import com.example.bomeeapp.databinding.LogoutAlertBinding
+import com.example.bomeeapp.ui.cs.CsActivity
+import com.example.bomeeapp.ui.history.HistoryActivity
 import com.example.bomeeapp.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,7 +31,6 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        // Get user data
         viewModel.getUserData()
         viewModel.userData.observe(viewLifecycleOwner) { resource ->
             when (resource) {
@@ -80,6 +81,16 @@ class ProfileFragment : Fragment() {
             }
         }
 
+        binding.btnHistory.setOnClickListener {
+            val intent = Intent(requireContext(), HistoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnCs.setOnClickListener {
+            val intent = Intent(requireContext(), CsActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogout.setOnClickListener {
             showLogoutConfirmationDialog()
         }
@@ -102,7 +113,6 @@ class ProfileFragment : Fragment() {
 
         dialog.show()
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

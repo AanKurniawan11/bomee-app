@@ -1,7 +1,6 @@
-package com.example.bomeeapp.data.network.responses
+package com.example.bomeeapp.data.network.responses.booking.history_all
 
-data class UserData(
-
+data class User(
     val id: String,
     val lastLogin: String,
     val name: String,

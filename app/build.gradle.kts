@@ -64,6 +64,9 @@ dependencies {
     implementation(libs.converter.scalars)
     implementation(libs.logging.interceptor.v491)
 
+    implementation (libs.circleimageview)
+
+
     // Chucker
     debugImplementation(libs.library)
     releaseImplementation(libs.library.no.op.v350)

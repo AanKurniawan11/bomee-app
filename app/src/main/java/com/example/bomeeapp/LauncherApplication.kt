@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class LauncherApplication: Application() {
+class LauncherApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO   )
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 }

@@ -13,7 +13,7 @@
     <string name="month">October Meet</string>
     <string name="News">Informasi dan Berita</string>
     <string name="booking">Booking</string>
-    <string name="desc_book">Masukkan Informasi yang Sesuai</string>
+    <string name="desc_book">Pastikan Data yang dimasukkan valid</string>
     <string name="room_select">Pilih Ruangan</string>
     <string name="pilih_divisi">Pilih Divisi</string>
     <string name="pilih_tanggal">Pilih Tanggal</string>

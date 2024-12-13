@@ -1,6 +1,7 @@
 package com.example.bomeeapp.ui.login
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -23,14 +24,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         userPreferences = UserPreferences(this)
-
-//        if (isLogin()) {
-//            startNewActivity(HomeActivity::class.java)
-//            finish()
-//        }
-
+        if (isLogin()) {
+            startNewActivity(HomeActivity::class.java)
+            finish()
+        }
         loginViewModel.loginResponse.observe(this) { response ->
             when (response) {
                 is Resource.Loading -> {
@@ -53,18 +51,16 @@ class LoginActivity : AppCompatActivity() {
                             "Session expired. Please log in again.",
                             Toast.LENGTH_SHORT
                         ).show()
-                        startNewActivity(LoginActivity::class.java) // Arahkan ke login
+                        startNewActivity(LoginActivity::class.java)
                     } else {
                         handleApiError(binding.root, response)
                     }
                 }
             }
         }
-
         binding.btnLogin.setOnClickListener {
             val username = binding.txfUsername.text.toString()
             val password = binding.passwordEditText.text.toString()
-
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 loginViewModel.login(username, password)
             } else {

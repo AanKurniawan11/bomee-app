@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.bomeeapp.data.local.UserPreferences
 import com.example.bomeeapp.data.network.Resource
 import com.example.bomeeapp.data.network.auth.AuthRepository
-import com.example.bomeeapp.data.network.responses.LoginResponse
+import com.example.bomeeapp.data.network.responses.auth.LoginResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

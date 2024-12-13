@@ -1,4 +1,4 @@
-package com.example.bomeeapp.data.network.responses
+package com.example.bomeeapp.data.network.responses.auth
 
 data class LoginData(
     val token: String,
